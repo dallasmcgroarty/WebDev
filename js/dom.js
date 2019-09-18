@@ -1,4 +1,5 @@
 // Javascript DOM manipulation
+// script for shoplist.html
 /********
  **Dom Selectors
  */
