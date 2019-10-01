@@ -16,7 +16,7 @@ const orderIndividualArrays = (array) => {
   let retArray = [];
   let dupeArray = [];
 
-  for (let i = 0; i < array.length - 1; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (array[i] === array[i + 1]) {
       dupeArray.push(array[i]);
     } else if (array[i] !== array[i + 1]) {
