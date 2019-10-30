@@ -63,3 +63,63 @@ const sumOfTwo = (array, target) => {
 
 const answer1 = sumOfTwo([1, 2, 3, 4, 5], 5);
 console.log(answer1);
+
+/*******
+ * question 1 involves reading a file of parenthises, ( is up and ) is down
+ * determine what floor santa is on at the end of input
+ **
+ * question 2 involves the same concept as question 1 except, return the floor number
+ * aka position in the array where santa first goes into the basement (floor -1)
+ **
+ * to use require and run these functions. In terminal use:
+ * > node practice.js
+ **
+ * node lets you run js anywhere and not just in the browser
+ *
+ */
+const fs = require('fs');
+
+function question1 () {
+  fs.readFile('./santa.txt', (err, data) => {
+    if (err) throw err;
+    console.time('timer');
+    const parenthesis = data.toString();
+    const parenthArray = parenthesis.split('');
+    let count = 0;
+    for (let i = 0; i < parenthArray.length; i++) {
+      if (parenthArray[i] === '(') {
+        count += 1;
+      } else if (parenthArray[i] === ')') {
+        count -= 1;
+      }
+    }
+    console.timeEnd('timer');
+    console.log('floor', count);
+  });
+}
+
+question1();
+
+function question2 () {
+  fs.readFile('./santa.txt', (err, data) => {
+    if (err) throw err;
+    console.time('timer1');
+    const parenthesis = data.toString();
+    const parenthArray = parenthesis.split('');
+    let count = 0;
+    for (let i = 0; i < parenthArray.length; i++) {
+      if (count === -1) {
+        console.timeEnd('timer1');
+        console.log(i);
+        return;
+      }
+      if (parenthArray[i] === '(') {
+        count += 1;
+      } else if (parenthArray[i] === ')') {
+        count -= 1;
+      }
+    }
+  });
+}
+
+console.log(question2());
