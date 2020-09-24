@@ -82,3 +82,17 @@ for (const btn of btns) {
     console.log('pepe');
   })
 }
+
+
+// for input testing
+input = document.getElementById('input');
+
+input.addEventListener('keyup', function (e) {
+  if (e.code === 'Enter') {
+    var text = document.getElementById('text');
+    text.innerText = e.target.value;
+    e.target.value = '';
+  }
+  e.preventDefault();
+});
+
