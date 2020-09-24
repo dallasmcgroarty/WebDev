@@ -6,9 +6,9 @@
 
 var liElems = document.querySelectorAll('li');
 
-liElems.forEach(function (elem) {
-  elem.style.background = 'yellow';
-});
+// liElems.forEach(function (elem) {
+//   elem.style.background = 'yellow';
+// });
 
 document.querySelector('.second').classList.add('change-font');
 
@@ -19,7 +19,7 @@ liElem.classList.add('done');
 // toggle css class on html elements (turns on or off)
 liElem.classList.toggle('done');
 
-liElem.classList.toggle('done');
+//liElem.classList.toggle('done');
 
 var btn = document.getElementById('enter');
 var input = document.getElementById('enter-item');
@@ -47,3 +47,20 @@ function addOnEnter (e) {
 btn.addEventListener('click', addOnClick);
 
 input.addEventListener('keypress', addOnEnter);
+
+for (const elem of liElems) {
+  elem.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (e.target.style.background === 'yellow') {
+      e.target.style.background = 'none';
+    } else {
+      e.target.style.background = 'yellow';
+    }
+  });
+};
+
+liElems.addEventListener('click', function (e) {
+  e.preventDefault();
+  e.classList.toggle('color');
+  console.log('poo');
+});

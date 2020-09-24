@@ -123,3 +123,23 @@ function question2 () {
 }
 
 console.log(question2());
+
+var startTime, endTime, timer, refresh;
+timer = document.getElementById('timer');
+
+function start() {
+  startTime = new Date();
+  refresh = setInterval( function () {
+    endTime = new Date();
+    var timeDiff = endTime - startTime; //in ms
+    // strip the ms
+    timeDiff /= 1000;
+    // get seconds 
+    var seconds = Math.round(timeDiff);
+    document.getElementById('timer').innerText = seconds.toString();
+  }, 1000);
+};
+
+function end() {
+  clearInterval(refresh);
+}
