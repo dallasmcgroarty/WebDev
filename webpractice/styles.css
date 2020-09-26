@@ -66,3 +66,7 @@ a {
 .clicked {
     content: 'clicked';
 }
+
+.row-btn {
+    width: 50px;
+}

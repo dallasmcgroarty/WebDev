@@ -64,3 +64,19 @@ liElems.addEventListener('click', function (e) {
   e.classList.toggle('color');
   console.log('poo');
 });
+
+var body = document.querySelector('body');
+
+function createButton () {
+  for(var i = 1; i <= 20; i++) {
+    console.log(i);
+    var btn = document.createElement('button');
+    btn.innerText = i;
+    btn.addEventListener('click', function (e) {
+        alert(e.target.value);
+    });
+    body.appendChild(btn);
+  }    
+};
+
+createButton();

@@ -96,3 +96,30 @@ input.addEventListener('keyup', function (e) {
   e.preventDefault();
 });
 
+var arr1 = [1,2,3,4,5];
+
+function duplicate (arr) {
+  var len = arr.length;
+  for (var i = 0; i < len; i++) {
+    arr.push(arr[i]);
+  }
+  return  arr;
+};
+
+console.log(duplicate(arr1));
+
+var body = document.querySelector('body');
+
+function createButton () {
+  for(var i = 1; i <= 20; i++) {
+      var btn = document.createElement('button');
+      btn.innerText = i;
+      btn.className = 'row-btn';
+      btn.addEventListener('click', function (e) {
+          alert(e.target.innerText);
+      });
+      body.appendChild(btn);
+  }    
+};
+
+createButton();
