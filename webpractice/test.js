@@ -76,9 +76,10 @@ var btns = document.getElementsByTagName('button');
 for (const btn of btns) {
   btn.addEventListener('click', function (e) {
     e.preventDefault();
-    let divName = e.target.getAttribute('data-btn');
-    let div = document.getElementsByClassName(divName);
-    div[0].classList.toggle('color');
+    e.target.parentNode.parentNode.classList.toggle('color');
+    //let divName = e.target.getAttribute('data-btn');
+    //let div = document.getElementsByClassName(divName);
+    //div[0].classList.toggle('color');
     console.log('pepe');
   })
 }

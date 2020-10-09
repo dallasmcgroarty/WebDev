@@ -50,7 +50,7 @@ a {
     border-left: none;
 }
 
-.bottom {
+.bottom-wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,4 +69,19 @@ a {
 
 .row-btn {
     width: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .link {
+        font-size: 16px;
+    }
+
+    .bottom-wrap {
+        font-size: 16px;
+    }
+
+    p {
+        margin: 10px;
+
+    }
 }
