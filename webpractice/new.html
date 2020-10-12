@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+    transition: ease-in-out 2s;
+    cursor: pointer;
+}
+
+.none {
+    visibility: hidden;
+    transition: visibility 1s, opacity 1s;
+}
+</style>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<script>
+  document.querySelector('h1').addEventListener('click', function(e){
+    e.preventDefault();
+    e.target.classList.toggle('none');
+  });
+</script>
+</body>
+</html>
