@@ -1,0 +1,27 @@
+.outer {
+    width: 500px;
+    height: 300px;
+    /*width: 30%; then just use padding: 10px 0; in inner element*/
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 2s, height 2s, border-radius 2s;
+}
+
+.inner:hover {
+    width: 500px;
+    height: 300px;
+    border-radius: 0;
+    visibility: visible;
+}
