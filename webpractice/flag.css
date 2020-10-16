@@ -23,5 +23,27 @@
     width: 500px;
     height: 300px;
     border-radius: 0;
-    visibility: visible;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .outer {
+        width: 300px;
+        height: 200px;
+    }
+
+    .inner {
+        width: 150px;
+        height: 150px;
+    }
+
+    .inner:hover {
+        width: 300px;
+        height: 200px;
+        border-radius: 0;
+    }
 }
