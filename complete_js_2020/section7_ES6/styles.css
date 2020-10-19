@@ -1,0 +1,11 @@
+.green, .blue, .red {
+    text-align: center;
+    padding: 30px 0;
+    width: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.green {background-color: green;}
+.blue {background-color: blue;}
+.red{background-color: red;}
