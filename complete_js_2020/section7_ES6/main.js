@@ -116,3 +116,33 @@ ages = [16,20,18,17,21];
 
 console.log(ages.findIndex(cur => cur >= 18));
 console.log(ages.find(cur => cur >= 18));
+
+//////////////////////////
+// Spread operator
+// can use to pass array to function that takes multiple arguments
+const addFourAges = (a,b,c,d) => {
+  return a + b + c + d;
+}
+
+var sum1 = addFourAges(1,2,3,4);
+console.log(sum1);
+
+// ES6
+ages = [2,5,4,1]
+const sumFour = addFourAges(...ages);
+console.log(sumFour);
+
+// can use spread to concat arrays
+const familySmith = ['John','Mark','Jane'];
+const familyMiller = ['Mary','Bob','Ann'];
+const bigFamily = [...familySmith, ...familyMiller];
+console.log(bigFamily);
+
+// for dom selection / nodelists
+const h = document.querySelector('h1');
+const boxes2 = document.querySelectorAll('.box');
+const all = [h, ...boxes];
+
+all.forEach(e => {
+  e.style.color = 'red';
+});
