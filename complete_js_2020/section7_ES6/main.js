@@ -22,6 +22,7 @@ console.log(n.endsWith('h'));
 console.log(n.includes('oh'));
 console.log(firstName.repeat(4));
 
+
 ///////////////////////
 // Arrow functions
 
@@ -71,6 +72,7 @@ Person.prototype.myFriends = function (friends) {
 
 new Person('Timmy').myFriends(friends);
 
+
 ///////////////////////////
 // destructuring
 
@@ -117,9 +119,12 @@ ages = [16,20,18,17,21];
 console.log(ages.findIndex(cur => cur >= 18));
 console.log(ages.find(cur => cur >= 18));
 
+
 //////////////////////////
 // Spread operator
-// can use to pass array to function that takes multiple arguments
+// - can use to pass array to function that takes multiple arguments
+// - used in function call
+
 const addFourAges = (a,b,c,d) => {
   return a + b + c + d;
 }
@@ -146,3 +151,42 @@ const all = [h, ...boxes];
 all.forEach(e => {
   e.style.color = 'red';
 });
+
+
+///////////////////////
+// Rest parameters
+// - opposite of spread operator
+// - takes multiple arguments and turns it into an array
+// - used in function declaration
+
+function isFullAge(...years) {
+  years.forEach(cur => console.log(
+    (2020 - cur) >= 18));
+}
+
+isFullAge(1995,2010,2000);
+
+// with another parameter
+function isFullAge1(limit, ...years) {
+  years.forEach(cur => console.log(
+    (2020 - cur) >= limit));
+}
+
+isFullAge1(21,1995,2010,2000);
+
+
+/////////////////////////////
+// Default parameters
+
+function SmithPerson(firstName, yearOfBirth,lastName='Smith',
+nationality='American') {
+  this.firstName = firstName;
+  this.yearOfBirth = yearOfBirth;
+  this.lastName = lastName;
+  this.nationality = nationality;
+}
+
+var john = new SmithPerson('John',1995);
+console.log(john);
+var emily = new SmithPerson('Emily', 1993,'Diaz','Spanish');
+console.log(emily);
