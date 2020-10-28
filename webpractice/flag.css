@@ -29,7 +29,7 @@
     margin-top: 10px;
     background-color: rgb(233, 21, 21);
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
